@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tinza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/signup.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+    <body ng-app="tinzaApp">
+        <div ng-controller="signupController" id="signupContainer" class="container">
+            <div id="character">
+                <img src="assets/character.png" alt="character" />
+            </div>
+            <form role="form">
+                <div id="step1">
+                    <p class="title">You are one step away to become a Tinzer</p>
+                    <div class="form-group">
+                        <button type="button" class="btn" id="facebook_authentification"><span class=""></span>Sign up with Facebook</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn" id="google_authentification"><span class=""></span>Sign up with Google plus</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn" id="email_authentification"><span class=""></span>Sign up with your email</button>
+                    </div>
+                    <div>
+                        <p>Already have an account ? <a href="#" id="signin">Sign in</a></p>
+                    </div>
+                </div>
+                <div id="step2" class="inputcenterarea">
+                    <p class="title">Hello !</p>
+                    <div class="form-group">
+                        <label for="firstname">What's your name ?</label>
+                        <input ng-keypress="verifyLastFirstname()" ng-model="firstname" type="text" class="form-control" id="firstname" placeholder="First name" required="required">
+                        <div class="pressEnter">
+                            <img src="assets/enter.png" />
+                            <p>press enter</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="step3" class="inputcenterarea" >
+                    <p class="title">And</p>
+                    <div class="form-group">
+                        <label for="lastname">What's your last name ?</label>
+                        <input ng-model="lastname" type="text" class="form-control" id="lastname" placeholder="Last name" required="required" disabled="disabled">
+                        <div class="pressEnter">
+                            <img src="assets/enter.png" />
+                            <p>press enter</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="step4" class="inputcenterarea">
+                    <p class="title">Hey {{firstname}}, nice to meet you !</p>
+                    <div class="form-group">
+                        <label for="email">Can you share your email with us ?</label>
+                        <input ng-model="email" type="email" class="form-control" id="email" required="required" placeholder="email@domain.com">
+                        <div class="pressEnter">
+                            <img src="assets/enter.png" />
+                            <p>press enter</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="step5" class="inputcenterarea">
+                    <p class="title">You are almost there</p>
+                    <div class="form-group">
+                        <label for="password">Secure your account with a password</label>
+                        <input ng-model="password" type="password" class="form-control" required="required" id="password">
+                        <div class="pressEnter">
+                            <img src="assets/enter.png" />
+                            <p>press enter</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" id="signmeup">Sign me up !</button>
+                    <p id="terms">By signing up, you certify that you have read and accepted our <a href="#">Terms and conditions</a></p>
+                </div>
+                <div id="step6">
+                    <p class="title">Thank you</p>
+                    <p>We have sent you an email to <a href="#">{{email}}</a></p>
+                    <p>Please click the link in the message to activate your account</p>
+                    <a id="resend_email_link" href="#">Resend the message</a>
+                    <p>Or</p>
+                    <a id="change_email_link" href="#">Change your email</a>
+                </div>
+                <div id="resend_email">
+                    <p class="title">Message resent</p>
+                    <p>Ok, we've sent the confirmation message to <a href="#">{{email}}</a></p>
+                    <p>Make sure to check your junk or spam folder.</p>
+                    <p>The sender is <a href="#">tinza@gmail.com</a></p>
+                </div>
+                <div id="change_email">
+                    <p class="title">Change your email</p>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="new_email" placeholder="Your new email">
+                        <div class="pressEnter">
+                            <img src="assets/enter.png" />
+                            <p>press enter</p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" id="send">Send</button>
+                    <p>Or</p>
+                    <a href="#">Go back</a>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(document).keypress(function (e) {
+                    if (e.which === 13) {
+                        e.preventDefault();
+                    }
+                });
+                $("#email_authentification").click(function () {
+                    $("#step1").fadeOut(500);
+                    $("#step2").fadeIn(500);
+
+                    $("#firstname").keypress(function (e) {
+                        if (e.which === 13) {
+                            $("#step2").fadeOut(500);
+                            $("#step3").fadeIn(500);
+                            $("#lastname").removeAttr("disabled");
+                            $("#lastname").focus();
+                        }
+                    });
+                    $("#lastname").keypress(function (e) {
+                        if (e.which === 13) {
+                            $("#step3").fadeOut(500);
+                            $("#step5").fadeIn(500);
+                        }
+                    });
+                    $("#email").keypress(function (e) {
+                        if (e.which === 13) {
+                            $("#step4").fadeOut(500);
+                            $("#step5").fadeIn(500);
+                            $("#signmeup, #terms").fadeIn(500);
+                        }
+                    });
+                    $("#password").keypress(function (e) {
+                        if (e.which === 13) {
+                            $("#step5").fadeOut(500);
+                            $("#step6").fadeIn(500);
+                        }
+                    });
+                    $("#resend_email_link").click(function () {
+                        $("#step6").fadeOut(500);
+                        $("#resend_email").fadeIn(500);
+                    });
+                    $("#change_email_link").click(function () {
+                        $("#step6").fadeOut(500);
+                        $("#change_email").fadeIn(500);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

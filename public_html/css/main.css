@@ -1,0 +1,86 @@
+@import url(http://db.onlinewebfonts.com/c/98bc871859421aac64683fbbb7e9f181?family=Eight+One);
+
+@font-face {
+    font-family: "Eight One";
+    src: url("http://db.onlinewebfonts.com/t/98bc871859421aac64683fbbb7e9f181.eot");
+    src: url("http://db.onlinewebfonts.com/t/98bc871859421aac64683fbbb7e9f181.eot?#iefix") format("embedded-opentype"),
+        url("http://db.onlinewebfonts.com/t/98bc871859421aac64683fbbb7e9f181.woff") format("woff"),
+        url("http://db.onlinewebfonts.com/t/98bc871859421aac64683fbbb7e9f181.ttf") format("truetype"),
+        url("http://db.onlinewebfonts.com/t/98bc871859421aac64683fbbb7e9f181.svg#Eight One") format("svg");
+}
+
+body {
+    background-image: url('../assets/background.png');
+    background-size: cover;
+}
+.navbar-custom {
+    background-color: #FBD805;
+    font-family: "Eight one";
+}
+
+.navbar-custom a {
+    color:#fff;
+    font-size: 20px;
+}
+
+.dropbutton {
+    color: #fff;
+    background-color: transparent;
+    height: 50px;
+    width: 40px;
+    border: none;
+}
+
+.dropbutton:hover, .dropbutton:focus {
+    color: #FBD805;
+    background-color: #fff;
+}
+
+.dropdown-menu {
+    background-color: #FBD805;
+    min-width: 220px;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    font-size: 25px;
+}
+
+.dropdown-menu li a:hover {
+    color: #FBD805;
+}
+
+#logo {
+    padding-left: 34%;
+}
+
+#logo li a {
+    font-size: 50px;
+}
+
+#logo li a:hover {
+    background-color: #fff;
+    color: #FBD805;
+}
+
+.navbar-right {
+    margin-top: 7px;
+}
+
+.navbar-right, .navbar-right li, .navbar-right li a {
+    height: 36px;
+}
+
+.navbar-right li a {
+    padding-top: 7px;
+}
+
+.navbar-right li a:link, .navbar-right li a:visited {
+    border: none;
+    background-color: #FBD805;
+}
+
+.navbar-right li a:hover, .navbar-right li a:active {
+    border: 2px solid #fff;
+    background-color: transparent;
+}

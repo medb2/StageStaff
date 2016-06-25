@@ -1,0 +1,99 @@
+body {
+    font: normal 14px verdana-regular;
+    color: #b2b1b1;
+    text-align: center;
+}
+
+#signupContainer {
+    background-image: url('../assets/egg.png');
+    background-repeat: no-repeat;
+    height: 516px;
+    width: 400px;
+    /*opacity: 0.8;*/
+}
+
+p {
+    margin: 20px 0;
+    padding: 0 40px;
+}
+
+#character img {
+    width: 100px;
+    margin-top: 72px;
+    margin-bottom: 10px;
+}
+
+input[type="text"], [type="password"], [type="email"] {
+    border: 0;
+    border-bottom: 1px solid #6faea1;
+    width: 72%;
+    margin: auto;
+}
+
+.btn {
+    border-radius: 40px;
+    color: #fff;
+    width: 72%;
+}
+
+.pressEnter {
+    font-size: 12px;
+    font-family: verdana–bold;
+    color: #555;
+    float: right;
+    margin-top: 5px;
+    padding-right: 50px;
+}
+
+.pressEnter img {
+    width: 12px;
+    margin-right: 5px;
+}
+
+.pressEnter p {
+    display: inline;
+    padding: 0;
+}
+
+#facebook_authentification {
+    background-color: #6faea1;
+    border: 2px solid #6faea1;
+}
+
+#google_authentification {
+    background-color: #f6999d;
+    border: 2px solid #f6999d;
+    width: 86%;
+}
+
+#email_authentification {
+    background-color: #999898;
+    border: 2px solid #999898;
+}
+
+#signmeup, #send {
+    background-color: #fbd805;
+    border: 2px solid #fbd805;
+    margin-top: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#signin {
+    color: #fbd805;
+}
+
+.form-group label {
+    color: #369898;
+}
+
+#step2, #step3, #step4, #step5, #step6, #resend_email, #change_email, #signmeup, #terms {
+    display: none;
+}
+.inputcenterarea{
+  margin-top: 50px;
+  
+}

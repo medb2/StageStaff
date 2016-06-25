@@ -1,0 +1,40 @@
+body {
+    font: normal 14px verdana-regular;
+    color: #b2b1b1;
+    text-align: center;
+}
+
+#signinContainer {
+    width: 300px;
+    height: 220px;
+    float: right;
+    border: 2px solid #f6da0a;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 50px;
+    padding-top: 20px;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.pressEnter {
+    font-size: 12px;
+    font-family: verdana–bold;
+    color: #555;
+    float: right;
+    margin: 10px 0;
+}
+
+.pressEnter img {
+    width: 12px;
+    margin-right: 5px;
+}
+
+.pressEnter p {
+    display: inline;
+    padding: 0;
+}
+
+#signin_btn {
+    background-color: #fbd805;
+    margin-top: 10px;
+    width: 80%;
+}

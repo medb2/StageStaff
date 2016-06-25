@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tinza</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/signin.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div id="signinContainer" class="container">
+            <form role="form">
+<!--                <ul>
+                    <li><a href="" ng-click="loginFacebook()" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="" ng-click="loginGoogle()" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                </ul>-->
+                <div class="form-group">
+                    <input ng-model="email" type="email" class="form-control" id="email" placeholder="Email Addresse" required="required">
+                    <div class="pressEnter">
+                        <img src="assets/enter.png" />
+                        <p>press enter</p>
+                    </div>    
+                </div>
+                <div class="form-group">
+                    <input ng-model="password" type="password" class="form-control" id="password" placeholder="Password" required="required">
+                    <div class="pressEnter">
+                        <img src="assets/enter.png" />
+                        <p>press enter</p>
+                    </div>    
+                </div>
+                <button type="submit" class="btn" id="signin_btn">Sign in</button>
+            </form>
+        </div>
+    </body>
+</html>
