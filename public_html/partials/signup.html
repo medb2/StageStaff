@@ -30,6 +30,7 @@
                         <p>Already have an account ? <a href="#" id="signin">Sign in</a></p>
                     </div>
                 </div>
+                <input id="currentStep" hidden="true" value="0">
                 <div id="step2" class="inputcenterarea">
                     <p class="title">Hello !</p>
                     <div class="form-group">
@@ -52,8 +53,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <div id="step4" class="inputcenterarea">
                     <p class="title">Hey {{firstname}}, nice to meet you !</p>
@@ -106,6 +105,9 @@
                     <p>Or</p>
                     <a href="#">Go back</a>
                 </div>
+                <div id="btnback" style="margin-right:10%;margin-left:10%;">
+                  <a class="glyphicon glyphicon-circle-arrow-left" style="color:#FBD805; font-size:30px; margin-right:40%;margin-left:40%;" href="#"></a>
+                </div>
             </form>
         </div>
         <script type="text/javascript">
@@ -118,18 +120,23 @@
                 $("#email_authentification").click(function () {
                     $("#step1").fadeOut(500);
                     $("#step2").fadeIn(500);
+                    $("#currentstep").value="1"
 
                     $("#firstname").keypress(function (e) {
                         if (e.which === 13) {
                             $("#step2").fadeOut(500);
                             $("#step3").fadeIn(500);
+                            $("#btnback").fadeIn(500);
                             $("#lastname").removeAttr("disabled");
                             $("#lastname").focus();
+                            $("#currentstep").val(2);
+                            alert($("#currentstep").val());
                         }
                     });
                     $("#lastname").keypress(function (e) {
                         if (e.which === 13) {
                             $("#step3").fadeOut(500);
+                            $("#btnback").fadeIn(500);
                             $("#step5").fadeIn(500);
                         }
                     });
@@ -137,6 +144,7 @@
                         if (e.which === 13) {
                             $("#step4").fadeOut(500);
                             $("#step5").fadeIn(500);
+                            $("#btnback").fadeIn(500);
                             $("#signmeup, #terms").fadeIn(500);
                         }
                     });
@@ -144,6 +152,7 @@
                         if (e.which === 13) {
                             $("#step5").fadeOut(500);
                             $("#step6").fadeIn(500);
+                            $("#btnback").fadeOut(500);
                         }
                     });
                     $("#resend_email_link").click(function () {

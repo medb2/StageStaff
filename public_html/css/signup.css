@@ -90,10 +90,10 @@ input[type="text"], [type="password"], [type="email"] {
     color: #369898;
 }
 
-#step2, #step3, #step4, #step5, #step6, #resend_email, #change_email, #signmeup, #terms {
+#step2, #step3, #step4, #step5, #step6, #resend_email,#btnback, #change_email, #signmeup, #terms {
     display: none;
 }
 .inputcenterarea{
   margin-top: 50px;
-  
+
 }
